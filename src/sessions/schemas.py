@@ -1,18 +1,29 @@
 from pydantic import BaseModel
-from typing import List, Optional
-from datetime import time, timedelta
 from uuid import UUID
+from typing import Optional
 
-class SessionBase(BaseModel):
-    start_time: time
-    duration: timedelta
-    is_busy: bool
-
-class SessionCreate(SessionBase):
-    day_id: str
-
-class Session(SessionBase):
-    id: str
+class BaseSession(BaseModel):
+    date: str
+    time: str
+    type_service: str
+    duration: str
 
     class Config:
+        arbitrary_types_allowed = True
+
+class CreateSession(BaseSession):
+    pass
+
+class UpdateSession(BaseSession):
+    user: Optional[str]
+    date: Optional[str]
+    time: Optional[str]
+    type_service: Optional[str]
+    duration: Optional[str]
+
+class Session(BaseSession):
+    id: UUID
+
+    class Config:
+        from_attributes = True
         arbitrary_types_allowed = True

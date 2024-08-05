@@ -2,12 +2,12 @@ from sqlalchemy import Column, String
 from ..database import Base
 import uuid
 
-class Post(Base):
-    __tablename__ = "posts"
+class Image(Base):
+    __tablename__ = "images"
 
     id = Column(String, nullable=False, index=True, unique=True, default=lambda x: str(uuid.uuid4()), primary_key=True)
-    title = Column(String, nullable=False, index=True)
-    description = Column(String, nullable=False, index=True)
+    filename = Column(String, unique=True, index=True)
+    filepath = Column(String, unique=True, index=True)
 
     def __repr__(self):
-        return f"{self.id}, {self.title}, {self.description}"
+        return f"{self.filename}, {self.id}"

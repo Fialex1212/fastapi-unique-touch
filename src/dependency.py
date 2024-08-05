@@ -1,7 +1,7 @@
-from src.database import SessionLocal
+from .database import LocalSession
 
 def get_db():
-    db = SessionLocal()
+    db = LocalSession()
     try:
         yield db
     finally:
