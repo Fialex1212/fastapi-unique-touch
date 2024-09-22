@@ -1,0 +1,16 @@
+.modal__overlay {
+    position: relative;
+    padding: 2.5dvh 2.5dvw;
+    min-width: 50dvw;
+    width: 100%;
+    height: 80dvh;
+    background: rgb(var(--clr-dp-02));
+    border-radius: var(--radius-high);
+    & > button:last-of-type {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        aspect-ratio: 1;
+        height: 3rem;
+    }
+}

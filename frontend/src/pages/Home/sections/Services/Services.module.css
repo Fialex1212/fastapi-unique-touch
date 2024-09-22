@@ -1,0 +1,60 @@
+.services__section {
+	margin-top: 15dvh;
+	display: flex;
+	padding-block: 12dvh;
+	height: fit-content;
+	background: linear-gradient(0deg,
+		rgba(var(--clr-green-00), .38),
+		rgba(var(--clr-green-00), .38)),
+		url('src/assets/backgrounds/FAQbg.jpg') no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+.services__list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin-top: 3dvh;
+	gap: 1.5dvh;
+
+	& > div:nth-child(2n - 3) { justify-self: end }
+
+	& > div {
+		width: 100%;
+		min-width: 22.5dvw;
+		max-width: 22.5dvh;
+		min-height: 22.5dvh;
+		border-radius: var(--radius-medium);
+		filter: drop-shadow(.1rem 0 2.5rem rgb(var(--clr-prime-black)));
+		background: rgba(var(--clr-dp-02), .87);
+
+		padding: 3.5dvh 2dvh;
+
+		& > div:first-child {
+			height: 10dvh;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			background: white;
+			margin: 0 auto 2ch auto;
+		}
+
+		&  p {
+			margin-inline: auto;
+			max-width: 45ch;
+		}
+	}
+}
+
+@media screen and (max-width: 925px) {
+	.services__list > div { max-width: unset }
+}
+
+@media screen and (max-width: 600px) {
+	.services__list {
+		grid-template-columns: repeat(1, 1fr);
+		place-items: center;
+
+		& > div { min-width: 85% }
+		& > div:nth-child(2n - 3) { justify-self: center }
+	}
+}

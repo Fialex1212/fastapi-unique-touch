@@ -1,0 +1,17 @@
+.splitter {
+	position: relative;
+	text-align: center;
+	border-color: var(--clr-disabled);
+	width: 100%;
+
+	&::before, &::after {
+		border-top: 1px solid var(--clr-disabled);
+		position: absolute;
+		content: '';
+		width: 45%;
+		top: 50%;
+	}
+
+	&::before { left: 0 }
+	&::after { right: 0 }
+}

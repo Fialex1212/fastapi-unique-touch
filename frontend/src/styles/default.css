@@ -1,0 +1,99 @@
+/* DEFAULT FONT: Noto Sans: 100 - 900 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Font */
+  --default-font-size: calc(.25rem + 1.15dvh);
+  --font-size-large: calc(var(--default-font-size) * 1.7);
+  --font-size-massive: calc(var(--default-font-size) * 2.8);
+  
+  --clr-prime-white: 245, 245, 245;
+  --clr-prime-black: 18, 18, 18;
+
+  --clr-white-high: rgba(245, 245, 245, .87);
+  --clr-white-medium: rgba(245, 245, 245, .6);
+  --clr-disabled: rgba(245, 245, 245, .38);
+
+  --clr-dp-00: 40, 24, 16;
+  --clr-dp-02: 70, 50, 40;
+  --clr-dp-04: 80, 60, 50;
+  --clr-dp-08: 100, 80, 70;
+
+  --clr-green-00: 98, 110, 58;
+  --clr-green-02: 108, 120, 68;
+
+  /* Radius */
+  --radius-high: 1.75dvh;
+  --radius-medium: 1.2dvh;
+  --radius-low: .8dvh;
+}
+
+::-webkit-scrollbar { width: .65dvw; }
+::-webkit-scrollbar-track {	background: rgba(var(--clr-dp-02), .6) }
+::-webkit-scrollbar-thumb {
+	background: rgb(var(--clr-dp-04));
+	border-radius: 1dvh;
+}
+
+* {
+  scroll-margin-top: 10dvh;
+  box-sizing: border-box;
+  font-family: "Noto Sans", monospace;
+  font-size: var(--default-font-size);
+  color: var(--clr-white-high);
+  font-weight: 400;
+  
+  letter-spacing: 1px;
+}
+
+html { scroll-behavior: smooth }
+
+body {
+  background: rgb(var(--clr-dp-00));
+  overflow-x: hidden;
+  margin: 0;
+}
+
+h1, h2 {
+  color: rgb(var(--clr-prime-white));
+  font-weight: 700;
+}
+
+h1, h2, h3, h4, p,
+ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+ul { list-style: none }
+a { text-decoration: none }
+
+input { text-overflow: ellipsis }
+
+button,
+input,
+textarea {
+  outline: none
+}
+
+textarea { resize: none }
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Icons, Imgs */
+svg {
+  width: 2.5dvh;
+  height: 2.5dvh;
+  max-width: 2.5dvh;
+  max-height: 2.5dvh;
+}
+
+svg path,
+polygon {
+  fill: rgb(var(--clr-prime-white));
+  stroke: rgb(var(--clr-prime-white));
+}

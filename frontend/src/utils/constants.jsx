@@ -1,0 +1,1 @@
+export const AP_URL = import.meta.env.VITE_PUBLIC_ADMIN_PANEL_URL

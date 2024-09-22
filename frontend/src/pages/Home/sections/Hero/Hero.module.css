@@ -1,0 +1,62 @@
+.hero__section {
+	/* background: linear-gradient(180deg,
+		transparent,
+		rgb(var(--clr-dp-00))),
+		url('src/assets/backgrounds/plainsBg.jpg') no-repeat;
+	background-size: cover; */
+	min-height: 100dvh;
+	height: 100dvh;
+	width: 100%;
+}
+
+.hero_container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	height: 100%;
+	gap: 2em;
+	& p {
+		max-width: 60ch;
+		margin: 1em auto;
+	}
+}
+
+.control_arrow_left,
+.control_arrow_right {
+	position: absolute;
+	color: rgb(var(--clr-prime-white)) !important;
+	font-size: var(--font-size-large);
+	font-weight: bold;
+	top: 50%;
+}
+
+.control_arrow_left {
+	rotate: 180deg;
+	left: 15%;
+}
+
+.control_arrow_right {
+	rotate: 0deg;
+	right: 15%;
+}
+
+.control_points_container {
+	position: absolute;
+	bottom: 5dvh;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.control_points_container ul {
+	display: flex;
+	flex-direction: row;
+	user-select: none;
+	gap: .5dvw;
+	& li {
+		cursor: pointer;
+		font-size: var(--font-size-large);
+	}
+}

@@ -1,0 +1,39 @@
+.content__section {
+    padding-block: 12dvh;
+    & > div {
+        & > *:not(:last-child) { margin-bottom: 3dvh }
+        & button {
+            display: flex;
+            margin-inline: auto;
+        }
+    }
+}
+
+.content_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+
+    text-align: center;
+
+    & > div {
+        cursor: zoom-in;
+        user-select: none;
+        flex: 1;
+        min-width: 22.5rem;
+        max-height: 35dvh;
+        height: 100%;
+        aspect-ratio: 1 / 2;
+        border-radius: var(--radius-high);
+        overflow: hidden;
+        & img {
+            transition: scale .3s;
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            
+            &:hover { scale: 1.1 }
+        }
+    }
+}

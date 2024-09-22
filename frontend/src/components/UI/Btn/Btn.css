@@ -1,0 +1,81 @@
+.btn {
+	--_btn-clr-green: rgb(var(--clr-green-02));
+	--_btn-clr-initial: rgba(var(--clr-dp-08), .87);
+
+	/* display: inline-block !important; */
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: fit-content;
+	gap: .5rem;
+	background: var(--_btn-clr-initial);
+	color: rgb(var(--clr-prime-white)) !important;
+	text-transform: capitalize;
+	text-align: center;
+	border-radius: var(--radius-low);
+	border: 1px solid transparent;
+	padding: 1.25dvh 2.25dvh;
+	height: fit-content;
+	width: fit-content;
+	user-select: none;
+	cursor: pointer;
+
+	&:hover { background: rgba(var(--clr-dp-08), .6) }
+	& * { color: inherit !important }
+}
+
+.btn.btn-transparent {
+	--_btn-clr-initial: transparent;
+	border-color: rgb(var(--clr-prime-white));
+	background: transparent;
+	color: var(--clr-white-high) !important;
+
+	&:hover {
+		background: rgb(var(--clr-prime-white));
+		color: rgb(var(--clr-prime-black)) !important;
+	}
+}
+
+.btn.btn-accept {
+	--_btn-clr-initial: var(--_btn-clr-green);
+	background: var(--_btn-clr-green);
+	color: var(--clr-prime-white) !important;
+	&:hover, &.active { background: rgb(var(--clr-green-00)) }
+}
+
+.btn:is(.btn-accept, .btn-black) { color: var(--clr-prime-white) !important }
+.btn.btn-black {
+	--_btn-clr-initial: rgb(var(--clr-prime-black));
+	background: rgb(var(--clr-prime-black));
+	&:hover { background: color-mix(in srgb,
+		rgb(var(--clr-prime-black)),
+		rgb(var(--clr-prime-white)) 4%) }
+}
+
+.btn.btn-white {
+	--_btn-clr-initial: rgb(var(--clr-prime-white));
+	background: var(--_btn-clr-initial);
+	color: rgb(var(--clr-prime-black)) !important;
+	&:hover {
+		background: color-mix(in srgb,
+		rgb(var(--clr-prime-white)),
+		rgb(var(--clr-prime-black)) 16%);
+	}
+}
+
+.btn.btn-none {
+	background: unset;
+	border: unset;
+	padding: 0;
+	color: var(--clr-white-medium) !important;
+	&:hover { color: var(--clr-white-high) !important }
+}
+
+.btn.btn-disabled {
+	background: color-mix(in srgb, var(--_btn-clr-initial), rgba(0, 0, 0, .38));
+	border-color: color-mix(in srgb, var(--_btn-clr-initial), rgba(0, 0, 0, .38));
+	color: var(--clr-disabled) !important;
+/*	cursor: not-allowed;*/
+	pointer-events: none;
+	&:has(svg, img) { filter: opacity(.38) saturate(.38) }
+ }

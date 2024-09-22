@@ -1,0 +1,46 @@
+.FAQ__section {
+	background: linear-gradient(0deg,
+		rgba(var(--clr-green-00), .38),
+		rgba(var(--clr-green-00), .38)),
+		url('../../../assets/backgrounds/FAQbg.jpg') no-repeat;
+	background-size: cover;
+	padding-block: 12dvh;
+	text-align: center;
+	& > div > *:last-child { margin: auto }
+}
+
+.list__item {
+	position: relative;
+	margin-block: 2dvh;
+	padding: 2dvh;
+	text-align: left;
+
+	& > label {
+		cursor: pointer;
+
+		& h2, & p { padding-right: 15% }
+		& > p {
+			display: none;
+			max-width: 80ch;
+		}
+
+		&::after {
+			content: '+';
+			position: absolute;
+			font: bolder var(--font-size-large) monospace;
+			transform: translateY(-50%);
+			top: 50%;
+			right: 2dvh;
+		}
+	}
+
+	&:not(:last-child) { border-bottom: 1px solid var(--clr-disabled) }
+}
+
+.FAQ__section input[type='checkbox'] {
+	display: none;
+	&:checked {
+		& ~ label > p { display: block }
+		& + label::after { content: '-' }
+	}
+}
